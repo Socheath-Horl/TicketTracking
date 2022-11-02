@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MessageService } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
+import { AppCommonModule } from './app-common.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +20,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AppCommonModule,
   ],
-  providers: [],
+  providers: [
+    DialogService,
+    MessageService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
