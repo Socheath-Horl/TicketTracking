@@ -1,0 +1,47 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/ticket_client/dist
+/ticket_client/tmp
+/ticket_client/out-tsc
+/ticket_client/bazel-out
+
+# Node
+/ticket_client/node_modules
+/ticket_client/npm-debug.log
+/ticket_client/yarn-error.log
+
+# IDEs and editors
+/ticket_client/.idea/
+/ticket_client/.project
+/ticket_client/.classpath
+/ticket_client/.c9/
+/ticket_client/*.launch
+/ticket_client/.settings/
+/ticket_client/*.sublime-workspace
+
+# Visual Studio Code
+/ticket_client/.vscode/*
+/ticket_client/!.vscode/settings.json
+/ticket_client/!.vscode/tasks.json
+/ticket_client/!.vscode/launch.json
+/ticket_client/!.vscode/extensions.json
+/ticket_client/.history/*
+
+# Miscellaneous
+/ticket_client/.angular/cache
+/ticket_client/.sass-cache/
+/ticket_client/connect.lock
+/ticket_client/coverage
+/ticket_client/libpeerconnection.log
+/ticket_clienttestem.log
+/ticket_client/typings
+
+# System files
+/ticket_client/.DS_Store
+/ticket_client/Thumbs.db
+
+
+# C#
+/TicketTracking/bin
+/TicketTracking/obj

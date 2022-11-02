@@ -1,0 +1,1905 @@
+{
+	"info": {
+		"_postman_id": "6e758ca5-7312-48b7-b056-6000752e2a4e",
+		"name": "TicketTracking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "/api/Auth/roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3NjI3OSwiZXhwIjoxNjY3Mzc3NDc5LCJpYXQiOjE2NjczNzYyNzl9.YpY0fBio70Xt0oznNr6Buq1TUa7jaEdrfNKMcwINybc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"roles"
+									]
+								},
+								"description": "<h1>Get Role</h1>\n<p>This endpoint use for get roles. When call it, if success it will return:</p>\n<code>\n[\n    {\n        \"Name\": \"Administrator\",\n        \"NormalizedName\": \"ADMINISTRATOR\"\n    },\n    {\n        \"Name\": \"QA\",\n        \"NormalizedName\": \"QA\"\n    },\n    {\n        \"Name\": \"RD\",\n        \"NormalizedName\": \"RD\"\n    },\n    {\n        \"Name\": \"PM\",\n        \"NormalizedName\": \"PM\"\n    }\n]\n</code>\n<p>Otherwise it return error</p>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/roles",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"roles"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Auth/users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM4NzQ1OCwiZXhwIjoxNjY3Mzg4NjU4LCJpYXQiOjE2NjczODc0NTh9.RAhanCrbN1hsLjG2uV6conKtQ3ITUmQL_X0F4_5HUx8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"users"
+									]
+								},
+								"description": "<h1>Get All users</h1>\n<p>This endpoint use for get all user. When call it, if success it will return:</p>\n<code>\n[\n    {\n        \"Email\": \"admin@ticket.com\",\n        \"UserName\": \"admin@ticket.com\",\n        \"RoleNames\": [\n            \"Administrator\"\n        ]\n    },\n    {\n        \"Email\": \"qauser@ticket.com\",\n        \"UserName\": \"qauser@ticket.com\",\n        \"RoleNames\": [\n            \"QA\"\n        ]\n    },\n    {\n        \"Email\": \"rduser@ticket.com\",\n        \"UserName\": \"rduser@ticket.com\",\n        \"RoleNames\": [\n            \"RD\"\n        ]\n    },\n    {\n        \"Email\": \"pmuser@ticket.com\",\n        \"UserName\": \"pmuser@ticket.com\",\n        \"RoleNames\": [\n            \"PM\"\n        ]\n    },\n    {\n        \"Email\": \"example@example.com\",\n        \"UserName\": \"example@example.com\",\n        \"RoleNames\": [\n            \"SP\"\n        ]\n    }\n]\n</code>\n<p>Otherwise it return error</p>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Auth/role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3NjI3OSwiZXhwIjoxNjY3Mzc3NDc5LCJpYXQiOjE2NjczNzYyNzl9.YpY0fBio70Xt0oznNr6Buq1TUa7jaEdrfNKMcwINybc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Name\": \"Role name\",\n  \"NormalizedName\": \"Role name in uppercase\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/role",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"role"
+									]
+								},
+								"description": "<h1>Create Role</h1>\n<p>This endpoint for create new role. When call it, if success it will return:</p>\n<code>\n{\n    \"StatusCode\": 200,\n    \"Message\": \"PM is Created sussessfully\",\n    \"Token\": \"\",\n    \"UserName\": null,\n    \"Role\": \"\"\n}\n</code>\n<p>Otherwise it return error</p>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Name\": \"et magna do nisi\",\n  \"NormalizedName\": \"ut officia lab\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/role",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"role"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Auth/register",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3NjI3OSwiZXhwIjoxNjY3Mzc3NDc5LCJpYXQiOjE2NjczNzYyNzl9.YpY0fBio70Xt0oznNr6Buq1TUa7jaEdrfNKMcwINybc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Email\": \"user's email\",\n  \"Password\": \"Password\",\n  \"ConfirmPassword\": \"Confirm Password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"register"
+									]
+								},
+								"description": "<h1>Register User</h1>\n<p>This endpoint use for register new user. When call it, if success it will return:</p>\n<code>\n{\n    \"StatusCode\": 200,\n    \"Message\": \"User example@example.com is Created sussessfully\",\n    \"Token\": \"\",\n    \"UserName\": null,\n    \"Role\": \"\"\n}\n</code>\n<p>Otherwise it return error</p>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Email\": \"n3p@MCSsWez.hqzc\",\n  \"Password\": \"f[W~~T~A,G-|T1@\",\n  \"ConfirmPassword\": \"consectetur consequat\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Auth/activate",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3NjI3OSwiZXhwIjoxNjY3Mzc3NDc5LCJpYXQiOjE2NjczNzYyNzl9.YpY0fBio70Xt0oznNr6Buq1TUa7jaEdrfNKMcwINybc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"UserName\": \"Username or email\",\n  \"RoleName\": \"Role Name\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/activate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"activate"
+									]
+								},
+								"description": "<h1>Activate User</h1>\n<p>This endpoint use for activate user or assign role to user. When call it, it will return:</p>\n<code>\n{\n    \"StatusCode\": 200,\n    \"Message\": \"Role is sussessfully assigned to user\",\n    \"Token\": \"\",\n    \"UserName\": null,\n    \"Role\": \"\"\n}\n</code>\n<p>Otherwise it return error</p>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"UserName\": \"culpa ut\",\n  \"RoleName\": \"Ut aliqua\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/activate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"activate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Auth/login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Password\": \"Passw0rd\",\n  \"UserName\": \"user's email\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"login"
+									]
+								},
+								"description": "<h1>Login Endpoint</h1>\n<p>This endpoint use for log in. When call it, it will return:</p>\n<code>\n{\n    \"StatusCode\": 200,\n    \"Message\": \"Login Sussessful\",\n    \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3NjI3OSwiZXhwIjoxNjY3Mzc3NDc5LCJpYXQiOjE2NjczNzYyNzl9.YpY0fBio70Xt0oznNr6Buq1TUa7jaEdrfNKMcwINybc\",\n    \"UserName\": \"admin@ticket.com\",\n    \"Role\": \"Administrator\"\n}\n</code>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Password\": \"fugiat Lorem\",\n  \"UserName\": \"nulla dolore reprehenderit ea\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Bugs",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Bugs/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODcxMywiZXhwIjoxNjY3Mzc5OTEzLCJpYXQiOjE2NjczNzg3MTN9.J1ojdYV5leyXmt7gleyFUFvU7wzNDcdDhgoRaAYo-l8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Bugs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Bugs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "Lorem ea dolor",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Get Bug Ticket by Id</h1>\n<p>This endpoint use for get specific Bug Ticket. When call it, it will response:</p>\n<code>\n{\n    \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n    \"Description\": \"Bug Description\",\n    \"Summary\": \"Bug Summary\",\n    \"Severity\": false,\n    \"Priority\": true,\n    \"TicketType\": 0\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Bugs/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Bugs",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Bugs/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODcxMywiZXhwIjoxNjY3Mzc5OTEzLCJpYXQiOjE2NjczNzg3MTN9.J1ojdYV5leyXmt7gleyFUFvU7wzNDcdDhgoRaAYo-l8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Description\": \"Bug Description Update\",\n  \"Summary\": \"Bug Summary\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Bugs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Bugs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "173a1d1e-4fa8-4274-8f8d-9e060cacaead",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Update Bug Ticket</h1>\n<p>This endpoint use for update Bug Ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Update Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Bug Description Update\",\n        \"Summary\": \"Bug Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 0\n    }\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Description\": \"nisi anim\",\n  \"Summary\": \"aute ut esse quis nulla\",\n  \"TicketType\": 3,\n  \"Id\": \"urn:uuid:b15219ea-fa79-f12a-a0fa-c45d7baf7bab\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Bugs/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Bugs",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Bugs/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODcxMywiZXhwIjoxNjY3Mzc5OTEzLCJpYXQiOjE2NjczNzg3MTN9.J1ojdYV5leyXmt7gleyFUFvU7wzNDcdDhgoRaAYo-l8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Bugs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Bugs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "173a1d1e-4fa8-4274-8f8d-9e060cacaead",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Delete Bug Ticket</h1>\n<p>This endpoint use for delete Bug Ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Delete Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Bug Description Update\",\n        \"Summary\": \"Bug Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 0\n    }\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Bugs/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Bugs",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Bugs/:id/resolved",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM4MDAyNiwiZXhwIjoxNjY3MzgxMjI2LCJpYXQiOjE2NjczODAwMjZ9.5KfmyV9Y6anAA7wubiRbv_fLm5phIewrgAwB9bLS7NQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Bugs/:id/resolved",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Bugs",
+												":id",
+												"resolved"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "67fe3981-4bc8-4d34-a29a-0523ad8248de",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Resolve Bug Ticket</h1>\n<p>This endpoint use for resolve Bug Ticket to Resolve. When call it, if success it will response:</p>\n<code>\n{\n    \"message\": \"Update Success!\",\n    \"Ticket\": {\n        \"Id\": \"67fe3981-4bc8-4d34-a29a-0523ad8248de\",\n        \"Description\": \"Bug Description\",\n        \"Summary\": \"Bug Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 3\n    }\n}\n</code>\n<p>If record not found it will response with:</p>\n<coce>\nRecord based on 67fe3981-4bc8-4d34-a29a-0523ad8248de is not found.\n</code>\n<p>Otherwise it return error</p>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Bugs/:id/resolved",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Bugs",
+														":id",
+														"resolved"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Bugs",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM4MDAyNiwiZXhwIjoxNjY3MzgxMjI2LCJpYXQiOjE2NjczODAwMjZ9.5KfmyV9Y6anAA7wubiRbv_fLm5phIewrgAwB9bLS7NQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Description\": \"Bug Description\",\n  \"Summary\": \"Bug Summary\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Bugs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Bugs"
+									]
+								},
+								"description": "<h1>Create Bug Ticket</h1>\n<p>This endpoint use for create new bug ticket. When call it, if success it will response:</p>\n<code>\n{\n    \"message\": \"Create Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Bug Description\",\n        \"Summary\": \"Bug Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 0\n    }\n}\n</code>\n<p>Otherwise it return error</p>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Description\": \"nisi anim\",\n  \"Summary\": \"aute ut esse quis nulla\",\n  \"TicketType\": 3,\n  \"Id\": \"urn:uuid:b15219ea-fa79-f12a-a0fa-c45d7baf7bab\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Bugs",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Bugs"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Feature Requests",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/FeatureRequests/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODcxMywiZXhwIjoxNjY3Mzc5OTEzLCJpYXQiOjE2NjczNzg3MTN9.J1ojdYV5leyXmt7gleyFUFvU7wzNDcdDhgoRaAYo-l8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/FeatureRequests/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"FeatureRequests",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "Lorem ea dolor",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Get Feature Request Ticket by Id</h1>\n<p>This endpoint use for get specific Feature RequestTicket. When call it, it will response:</p>\n<code>\n{\n    \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n    \"Description\": \"Feature Request Description\",\n    \"Summary\": \"Feature Request Summary\",\n    \"Severity\": false,\n    \"Priority\": true,\n    \"TicketType\": 2\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/FeatureRequests/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"FeatureRequests",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/FeatureRequests/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODcxMywiZXhwIjoxNjY3Mzc5OTEzLCJpYXQiOjE2NjczNzg3MTN9.J1ojdYV5leyXmt7gleyFUFvU7wzNDcdDhgoRaAYo-l8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Description\": \"Feature Request Description Update\",\n  \"Summary\": \"Feature Request Summary\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/FeatureRequests/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"FeatureRequests",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "173a1d1e-4fa8-4274-8f8d-9e060cacaead",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Update Feature Request Ticket</h1>\n<p>This endpoint use for update Feature Request Ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Update Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Feature Request Description Update\",\n        \"Summary\": \"Feature Request Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 2\n    }\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Description\": \"nisi anim\",\n  \"Summary\": \"aute ut esse quis nulla\",\n  \"TicketType\": 3,\n  \"Id\": \"urn:uuid:b15219ea-fa79-f12a-a0fa-c45d7baf7bab\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/FeatureRequests/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"FeatureRequests",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/FeatureRequests/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/FeatureRequests/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"FeatureRequests",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "Lorem ea dolor",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Delete Feature Request Ticket</h1>\n<p>This endpoint use for delete Feature Request Ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Delete Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Feature Request Description Update\",\n        \"Summary\": \"Feature Request Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 2\n    }\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/FeatureRequests/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"FeatureRequests",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/FeatureRequests/:id/resolved",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM4MDAyNiwiZXhwIjoxNjY3MzgxMjI2LCJpYXQiOjE2NjczODAwMjZ9.5KfmyV9Y6anAA7wubiRbv_fLm5phIewrgAwB9bLS7NQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/FeatureRequests/:id/resolved",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"FeatureRequests",
+												":id",
+												"resolved"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "67fe3981-4bc8-4d34-a29a-0523ad8248de",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Resolve Feature Request Ticket</h1>\n<p>This endpoint use for resolve Feature Request Ticket to Resolve. When call it, if success it will response:</p>\n<code>\n{\n    \"message\": \"Update Success!\",\n    \"Ticket\": {\n        \"Id\": \"67fe3981-4bc8-4d34-a29a-0523ad8248de\",\n        \"Description\": \"Feature Request Description\",\n        \"Summary\": \"Feature Request Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 3\n    }\n}\n</code>\n<p>If record not found it will response with:</p>\n<coce>\nRecord based on 67fe3981-4bc8-4d34-a29a-0523ad8248de is not found.\n</code>\n<p>Otherwise it return error</p>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/FeatureRequests/:id/resolved",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"FeatureRequests",
+														":id",
+														"resolved"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/FeatureRequests",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODE3MCwiZXhwIjoxNjY3Mzc5MzcwLCJpYXQiOjE2NjczNzgxNzB9.0W4EkIXMJku2h-2ZMeLN-rSA7bndqYO-AVBgv59VGCw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Description\": \"Feature Description\",\n  \"Summary\": \"Feature Summary\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/FeatureRequests",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"FeatureRequests"
+									]
+								},
+								"description": "<h1>Create Feature Ticket</h1>\n<p>This endpoint use for create new bug ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Create Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Feature Description\",\n        \"Summary\": \"Feature Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 2\n    }\n}\n</code>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Description\": \"nisi anim\",\n  \"Summary\": \"aute ut esse quis nulla\",\n  \"TicketType\": 3,\n  \"Id\": \"urn:uuid:b15219ea-fa79-f12a-a0fa-c45d7baf7bab\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/FeatureRequests",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"FeatureRequests"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Test Cases",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/TestCases/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/TestCases/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestCases",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "Lorem ea dolor",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Get Test Case Ticket by Id</h1>\n<p>This endpoint use for get specific Test Case Ticket. When call it, it will response:</p>\n<code>\n{\n    \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n    \"Description\": \"Test Case Description\",\n    \"Summary\": \"Test Case Summary\",\n    \"Severity\": false,\n    \"Priority\": true,\n    \"TicketType\": 1\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/TestCases/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TestCases",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/TestCases/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODcxMywiZXhwIjoxNjY3Mzc5OTEzLCJpYXQiOjE2NjczNzg3MTN9.J1ojdYV5leyXmt7gleyFUFvU7wzNDcdDhgoRaAYo-l8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Description\": \"Test Case Description Update\",\n  \"Summary\": \"Test Case Summary\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/TestCases/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestCases",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "173a1d1e-4fa8-4274-8f8d-9e060cacaead",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Update Test Case Ticket</h1>\n<p>This endpoint use for update Test Case Ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Update Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Test Case Description Update\",\n        \"Summary\": \"Test Case Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 1\n    }\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Description\": \"nisi anim\",\n  \"Summary\": \"aute ut esse quis nulla\",\n  \"TicketType\": 3,\n  \"Id\": \"urn:uuid:b15219ea-fa79-f12a-a0fa-c45d7baf7bab\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/TestCases/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TestCases",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/TestCases/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODcxMywiZXhwIjoxNjY3Mzc5OTEzLCJpYXQiOjE2NjczNzg3MTN9.J1ojdYV5leyXmt7gleyFUFvU7wzNDcdDhgoRaAYo-l8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/TestCases/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestCases",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "Lorem ea dolor",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Delete Test Case Ticket</h1>\n<p>This endpoint use for delete Test Case Ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Delete Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Test Case Description Update\",\n        \"Summary\": \"Test Case Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 1\n    }\n}\n</code>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/TestCases/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TestCases",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/TestCases/:id/resolved",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/TestCases/:id/resolved",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestCases",
+												":id",
+												"resolved"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "Lorem ea dolor",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "<h1>Resolve Test Case Ticket</h1>\n<p>This endpoint use for resolve Test Case Ticket to Resolve. When call it, if success it will response:</p>\n<code>\n{\n    \"message\": \"Update Success!\",\n    \"Ticket\": {\n        \"Id\": \"67fe3981-4bc8-4d34-a29a-0523ad8248de\",\n        \"Description\": \"Test Case Description\",\n        \"Summary\": \"Test Case Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 3\n    }\n}\n</code>\n<p>If record not found it will response with:</p>\n<coce>\nRecord based on 67fe3981-4bc8-4d34-a29a-0523ad8248de is not found.\n</code>\n<p>Otherwise it return error</p>"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/TestCases/:id/resolved",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TestCases",
+														":id",
+														"resolved"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "Lorem ea dolor",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/TestCases",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3ODE3MCwiZXhwIjoxNjY3Mzc5MzcwLCJpYXQiOjE2NjczNzgxNzB9.0W4EkIXMJku2h-2ZMeLN-rSA7bndqYO-AVBgv59VGCw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Description\": \"Test Case Description\",\n  \"Summary\": \"Test Case Summary\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/TestCases",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"TestCases"
+									]
+								},
+								"description": "<h1>Create Test Case Ticket</h1>\n<p>This endpoint use for create new bug ticket. When call it, it will response:</p>\n<code>\n{\n    \"message\": \"Create Success!\",\n    \"Ticket\": {\n        \"Id\": \"173a1d1e-4fa8-4274-8f8d-9e060cacaead\",\n        \"Description\": \"Test Case Description\",\n        \"Summary\": \"Test Case Summary\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 1\n    }\n}\n</code>"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Description\": \"nisi anim\",\n  \"Summary\": \"aute ut esse quis nulla\",\n  \"TicketType\": 3,\n  \"Id\": \"urn:uuid:b15219ea-fa79-f12a-a0fa-c45d7baf7bab\",\n  \"Severity\": false,\n  \"Priority\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/TestCases",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TestCases"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/api/Tickets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjNTE0ZDAzNS03OWFlLTQ5ZTgtOWFhYS0xMTA5ODVhMGE5ZWIiLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTY2NzM3NjI3OSwiZXhwIjoxNjY3Mzc3NDc5LCJpYXQiOjE2NjczNzYyNzl9.YpY0fBio70Xt0oznNr6Buq1TUa7jaEdrfNKMcwINybc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Tickets",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Tickets"
+							]
+						},
+						"description": "<h1>Get All Ticket</h1>\n<p>This endpoint use for retrieve all for all type of ticket include Bug, Test Case, Feature Request. When call it, it will return:</p>\n<code>\n[\n    {\n        \"Id\": \"488291c9-a5f8-4988-add0-7cd9e82243ce\",\n        \"Description\": \"Order not found. There is some exception in code.\",\n        \"Summary\": \"Order not found\",\n        \"Severity\": false,\n        \"Priority\": false,\n        \"TicketType\": 3\n    },\n    {\n        \"Id\": \"fe38cad2-3309-4cdb-99aa-3127502f5dca\",\n        \"Description\": \"Order not found. There is some exception in code.\",\n        \"Summary\": \"Order not found 3\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 0\n    },\n    {\n        \"Id\": \"9ad08e04-40cb-4f17-a729-e855bb27d10e\",\n        \"Description\": \"Testing. There is some exception in code.\",\n        \"Summary\": \"Testing Phase 1\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 1\n    },\n    {\n        \"Id\": \"6326cafa-a8de-4cfb-8bd8-76a88a75923d\",\n        \"Description\": \"Testing. There is some exception in code.\",\n        \"Summary\": \"Testing Phase 3\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 3\n    },\n    {\n        \"Id\": \"d1a70ba0-1e45-4a9f-b778-d716fb7f6e6a\",\n        \"Description\": \"New Feature. There is some exception in code.\",\n        \"Summary\": \"New Feature 1\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 1\n    },\n    {\n        \"Id\": \"41ba0b58-24ef-47aa-8567-84a3280c8ff5\",\n        \"Description\": \"New Feature. There is some exception in code.\",\n        \"Summary\": \"New Feature 2\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 1\n    },\n    {\n        \"Id\": \"c3a77684-24c9-48b0-a8dc-1da1e93a1957\",\n        \"Description\": \"New Feature. There is some exception in code.\",\n        \"Summary\": \"New Feature 3\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 1\n    },\n    {\n        \"Id\": \"efa2e720-83b8-40ea-bf59-82299ae7cb40\",\n        \"Description\": \"New Feature. There is some exception in code.\",\n        \"Summary\": \"New Feature 4\",\n        \"Severity\": false,\n        \"Priority\": true,\n        \"TicketType\": 3\n    },\n    {\n        \"Id\": \"6333fb44-33a0-4512-8bbf-2c88628f6c6a\",\n        \"Description\": \"New Feature. There is some exception in code.\",\n        \"Summary\": \"New Feature 5\",\n        \"Severity\": true,\n        \"Priority\": true,\n        \"TicketType\": 2\n    }\n]\n</code>"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Tickets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Tickets"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "<Bearer Token>",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
