@@ -15,6 +15,13 @@ import { ChartModule } from 'primeng/chart';
 import { FileUploadModule } from 'primeng/fileupload';
 import { DataViewModule } from 'primeng/dataview';
 import { ToastModule } from 'primeng/toast';
+import { MenuModule } from 'primeng/menu';
+import { PasswordModule } from 'primeng/password';
+import { MessagesModule } from 'primeng/messages';
+import { DialogModule } from 'primeng/dialog';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 @NgModule({
   exports: [
@@ -34,6 +41,13 @@ import { ToastModule } from 'primeng/toast';
     FileUploadModule,
     DataViewModule,
     ToastModule,
+    MenuModule,
+    PasswordModule,
+    MessagesModule,
+    DialogModule,
+    SplitButtonModule,
+    InputTextareaModule,
+    InputSwitchModule
   ]
 })
 export class AppPrimengModule { }

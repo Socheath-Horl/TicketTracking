@@ -1,0 +1,103 @@
+<div class="h-full-page">
+  <div class="flex flex-col h-full">
+    <div class="flex-initial z-20">
+      <div class="shadow flex flex-row justify-between items-center px-5 h-16">
+        <div >
+          <h1 class="font-semibold text-xl text-violet-800">Ticket</h1>
+        </div>
+        <div>
+          <p-splitButton label="New" [model]="this.ticketItems" styleClass="p-button-sm" appendTo="body"></p-splitButton>
+        </div>
+      </div>
+    </div>
+    <div class="flex-auto overflow-y-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 py-4">
+        <div class="w-full bg-gray-100 rounded-md border shadow-sm">
+          <div class="ticket-header w-full bg-white px-4 py-4">
+            <h1 class="text-lg text-violet-800 text-center">
+              <i class="pi pi-ticket"></i> Bug
+            </h1>
+          </div>
+          <div class="ticket-content w-full px-2 py-2">
+            <div *ngFor="let ticket of bugTickets" class="ticket w-full bg-white rounded px-2 py-2 mb-2">
+              <div class="w-full flex flex-row justify-between items-center">
+                <div>
+                  {{ticket.Summary}}
+                </div>
+                <div>
+                  <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
+                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full bg-gray-100 rounded-md border shadow-sm">
+          <div class="ticket-header w-full bg-white px-4 py-4">
+            <h1 class="text-lg text-violet-800 text-center">
+              <i class="pi pi-ticket"></i> Test Case
+            </h1>
+          </div>
+          <div class="ticket-content w-full px-2 py-2">
+            <div *ngFor="let ticket of testCaseTickets" class="ticket w-full bg-white rounded px-2 py-2 mb-2">
+              <div class="w-full flex flex-row justify-between items-center">
+                <div>
+                  {{ticket.Summary}}
+                </div>
+                <div>
+                  <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
+                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full bg-gray-100 rounded-md border shadow-sm">
+          <div class="ticket-header w-full bg-white px-4 py-4">
+            <h1 class="text-lg text-violet-800 text-center">
+              <i class="pi pi-ticket"></i> Feature Request
+            </h1>
+          </div>
+          <div class="ticket-content w-full px-2 py-2">
+            <div *ngFor="let ticket of featureRequestTickets" class="ticket w-full bg-white rounded px-2 py-2 mb-2">
+              <div class="w-full flex flex-row justify-between items-center">
+                <div>
+                  {{ticket.Summary}}
+                </div>
+                <div>
+                  <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
+                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full bg-gray-100 rounded-md border shadow-sm">
+          <div class="ticket-header w-full bg-white px-4 py-4">
+            <h1 class="text-lg text-violet-800 text-center">
+              <i class="pi pi-ticket"></i> Resolved
+            </h1>
+          </div>
+          <div class="ticket-content w-full px-2 py-2">
+            <div *ngFor="let ticket of resolvedTickets" class="ticket w-full bg-white rounded px-2 py-2 mb-2">
+              <div class="w-full flex flex-row justify-between items-center">
+                <div>
+                  {{ticket.Summary}}
+                </div>
+                <div>
+                  <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
+                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-ticket-dialog></app-ticket-dialog>

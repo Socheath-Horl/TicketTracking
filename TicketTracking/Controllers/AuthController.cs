@@ -162,5 +162,24 @@ namespace TicketTracking.Controllers
                 return BadRequest(response);
             }
         }
+
+        [Route("logout")]
+        [HttpGet]
+        public async Task<IActionResult> AuthLogoutAsync()
+        {
+            ResponseStatus response = new ResponseStatus();
+            try
+            {
+                await service.UserSignOutAsync();
+
+                response = ResponseStatus.SetResponse(200, "Logout Sussessful","", "");
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                response = ResponseStatus.SetResponse(400, ex.Message, "", "");
+                return BadRequest(response);
+            }
+        }
     }
 }

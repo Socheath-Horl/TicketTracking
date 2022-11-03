@@ -1,0 +1,4 @@
+.h-full-page {
+  height: calc(100vh - #{$header-height});
+  background-color: var(--background-color);
+}

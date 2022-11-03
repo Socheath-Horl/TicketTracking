@@ -1,0 +1,37 @@
+<form id="loginForm" [formGroup]='loginForm' *ngIf="loginForm" (ngSubmit)="onLogin()" autocomplete="off">
+  <div class="card-wrapper w-screen h-screen flex justify-center items-center">
+    <div class="card w-full md:w-2/5 shadow-md shadow-gray-300 border border-gray-300 rounded">
+      <div class="card-header w-full border-b border-gray-300 px-5 py-3">
+        <h1 class="uppercase text-center font-semibold text-xl">Login</h1>
+      </div>
+      <div class="card-content w-full px-5 py-3">
+        <div class="grid grid-cols-3 gap-4 mt-3">
+          <label class="leading-10" for="email">Email:</label>
+          <div class="flex flex-col col-span-2">
+            <input type="email" pInputText id="email" class="p-inputtext-sm" required autofocus
+              [formControl]='loginForm.controls["email"]' />
+            <small class="p-error" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].dirty">Email is required.</small>
+            <small class="p-error" *ngIf="loginForm.controls['email'].hasError('email') && loginForm.controls['email'].dirty">Email is required.</small>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-3">
+          <label class="leading-10" for="password">Password:</label>
+          <div class="flex flex-col col-span-2">
+            <input type="password" pPassword id="password" class="p-inputtext-sm" required [feedback]="false"
+              [formControl]='loginForm.controls["password"]' />
+            <small class="p-error" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].dirty">Password is required.</small>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer w-full flex flex-row justify-between items-center px-5 py-3">
+        <div class="">
+          <p-button label="Don't have account? Register" styleClass="p-button-link" (onClick)="onGotoRegister()">
+          </p-button>
+        </div>
+        <div class="">
+          <button type="submit" pButton styleClass="p-button-sm" [icon]="loading ? 'pi pi-spin pi-spinner' : 'pi pi-sign-in'" label="Login" [disabled]="!loginForm.dirty || loading"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

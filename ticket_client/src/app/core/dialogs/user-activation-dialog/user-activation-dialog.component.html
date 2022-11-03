@@ -1,0 +1,30 @@
+<form id="userRoleForm" [formGroup]="userRoleForm" autocomplete="off" *ngIf="userRoleForm">
+  <p-dialog header="Activate User" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    [resizable]="false">
+    <ng-template pTemplate="content">
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="company" class="flex items-center normal-text">User ID:</label>
+        <div class="col-span-2">
+          <p-dropdown inputId="user" [options]="users" [formControl]='userRoleForm.controls["user"]' optionLabel="label" optionValue="value"
+            [filter]="true" filterBy="label" [showClear]="true" placeholder="<<select>>" appendTo="body"
+            styleClass="w-full" [disabled]="true">
+          </p-dropdown>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="card" class="flex items-center normal-text">Role</label>
+        <div class="col-span-2">
+          <p-dropdown inputId="role" [options]="roles" [formControl]='userRoleForm.controls["role"]' optionLabel="label" [filter]="true"
+            filterBy="label" optionValue="value" [showClear]="true" placeholder="<<select>>" appendTo="body"
+            styleClass="w-full">
+          </p-dropdown>
+          <small class="p-error" *ngIf="userRoleForm.controls['role'].hasError('required') && userRoleForm.controls['role'].dirty">Role is required.</small>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <button type="submit" pButton icon="pi pi-check" (click)="onActivate()" label="Ok" styleClass="p-button-text"></button>
+    </ng-template>
+  </p-dialog>
+</form>

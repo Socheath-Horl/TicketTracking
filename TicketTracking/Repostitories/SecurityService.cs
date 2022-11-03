@@ -79,6 +79,19 @@ namespace TicketTracking.Repostitories
             bool isRoleAssigned = false;
             var role = roleManager.FindByNameAsync(user.RoleName).Result;
             var registeredUser = await userManager.FindByNameAsync(user.UserName);
+
+            if (registeredUser == null)
+            {
+                throw new Exception("User not found");
+            }
+
+            var userRole = await userManager.GetRolesAsync(registeredUser);
+
+            if (userRole.Count > 0)
+            {
+                throw new Exception("One user can only has one Role");
+            }
+
             if (role != null)
             {
                 var res = await userManager.AddToRoleAsync(registeredUser, role.Name);
@@ -143,7 +156,10 @@ namespace TicketTracking.Repostitories
             return authResponse;
         }
 
-
+        public async Task UserSignOutAsync()
+        {
+           await signInManager.SignOutAsync();
+        }
 
         // This method willaccept the token as inout parameter and wil receive token from it
         public async Task<string> GetUserFromTokenAsync(string token)

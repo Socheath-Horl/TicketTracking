@@ -1,0 +1,12 @@
+<p-menubar 
+  [model]="menuItems"
+  styleClass="no-radius uppercase"
+  >
+  <ng-template pTemplate="start">
+    <h1 class="text-2xl font-semibold mr-4 text-inherit text-violet-800">Ticket System</h1>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <button type="button" pRipple class="p-button-rounded p-button-secondary hidden lg:flex" pButton icon="pi pi-user" (click)="prifleMenu.toggle($event)"></button>
+    <p-menu #prifleMenu  [popup]="true" [model]="profileMenu"></p-menu>
+  </ng-template>
+</p-menubar>

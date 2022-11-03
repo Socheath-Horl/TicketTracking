@@ -1,0 +1,45 @@
+<div class="h-full-page">
+  <div class="flex flex-col h-full">
+    <div class="flex-initial z-20">
+      <div class="shadow flex flex-row justify-between items-center px-5 h-16">
+        <div >
+          <h1 class="font-semibold text-xl text-violet-800">User</h1>
+        </div>
+        <div>
+          <!-- <p-button label="New Ticket" icon="pi pi-plus" styleClass="p-button-sm"></p-button> -->
+        </div>
+      </div>
+    </div>
+    <div class="flex-auto overflow-y-auto">
+      <p-table [value]="users" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+            <tr>
+                <td>{{user.UserName}}</td>
+                <td>{{user.Email}}</td>
+                <td>{{user.RoleNames.length > 0 ? user.RoleNames[0] : ''}}</td>
+                <td>
+                  <p-button 
+                    label="Activate" 
+                    icon="pi pi-check" 
+                    styleClass="p-button-sm" 
+                    [disabled]="user.RoleNames.length > 0"
+                    (click)="onShowActivate(user)"
+                  ></p-button>
+                </td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
+
+<app-user-activation-dialog></app-user-activation-dialog>

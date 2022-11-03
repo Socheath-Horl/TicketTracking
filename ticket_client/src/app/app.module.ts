@@ -7,16 +7,22 @@ import {
   HttpClientModule,
   HTTP_INTERCEPTORS,
 } from "@angular/common/http";
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-
 import { AppCommonModule } from './app-common.module';
+import { LayoutComponent } from './shared/layout/layout.component';
+import { HeaderComponent } from './shared/layout/header/header.component';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { DialogsModule } from './core/dialogs/dialogs.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -24,10 +30,13 @@ import { AppCommonModule } from './app-common.module';
     AppRoutingModule,
     HttpClientModule,
     AppCommonModule,
+    DialogsModule,
   ],
   providers: [
     DialogService,
+    DatePipe,
     MessageService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

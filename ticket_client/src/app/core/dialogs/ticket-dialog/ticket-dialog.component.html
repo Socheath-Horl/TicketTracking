@@ -1,0 +1,57 @@
+<form id="ticketForm" [formGroup]="ticketForm" autocomplete="off" *ngIf="ticketForm">
+  <p-dialog header="Create New Ticket" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    [resizable]="false">
+    <ng-template pTemplate="content">
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="summary" class="flex items-center normal-text">Summary:</label>
+        <div class="col-span-2">
+          <input type="text" inputId="summary" class="p-inputtext-sm w-full" pInputText [formControl]='ticketForm.controls["summary"]' />
+          <small class="p-error" *ngIf="ticketForm.controls['summary'].hasError('required') && ticketForm.controls['summary'].dirty">Summary is required.</small>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="description" class="flex items-center normal-text">Description:</label>
+        <div class="col-span-2">
+          <textarea [rows]="5" pInputTextarea inputId="description" class="p-inputtext-sm w-full" [formControl]='ticketForm.controls["description"]'></textarea>
+          <small class="p-error" *ngIf="ticketForm.controls['description'].hasError('required') && ticketForm.controls['description'].dirty">Description is required.</small>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="ticketType" class="flex items-center normal-text">Ticket Type:</label>
+        <div class="col-span-2">
+          <p-dropdown inputId="ticketType" [options]="tickets" [formControl]='ticketForm.controls["ticketType"]' optionLabel="label" [filter]="true"
+            filterBy="label" optionValue="value" [showClear]="true" placeholder="<<select>>" appendTo="body"
+            styleClass="w-full">
+          </p-dropdown>
+          <small class="p-error" *ngIf="ticketForm.controls['ticketType'].hasError('required') && ticketForm.controls['ticketType'].dirty">Ticket Type is required.</small>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="severity" class="flex items-center normal-text">Severity:</label>
+        <div class="col-span-2">
+          <p-inputSwitch inputId="severity" [formControl]='ticketForm.controls["severity"]'></p-inputSwitch>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="priority" class="flex items-center normal-text">Priority:</label>
+        <div class="col-span-2">
+          <p-inputSwitch inputId="priority" [formControl]='ticketForm.controls["priority"]'></p-inputSwitch>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+        <label for="resolved" class="flex items-center normal-text">Resolved:</label>
+        <div class="col-span-2">
+          <p-inputSwitch inputId="resolved" [formControl]='ticketForm.controls["resolved"]'></p-inputSwitch>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <button type="submit" pButton icon="pi pi-check" (click)="onSave()" label="Ok" styleClass="p-button-text"></button>
+    </ng-template>
+  </p-dialog>
+</form>
