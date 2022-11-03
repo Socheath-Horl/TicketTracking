@@ -19,7 +19,7 @@
             filterBy="label" optionValue="value" [showClear]="true" placeholder="<<select>>" appendTo="body"
             styleClass="w-full">
           </p-dropdown>
-          <small class="p-error" *ngIf="userRoleForm.controls['role'].hasError('required') && userRoleForm.controls['role'].dirty">Role is required.</small>
+          <small class="p-error" *ngIf="userRoleForm.controls['role'].hasError('required') && userRoleForm.controls['role'].untouched == false">Role is required.</small>
         </div>
       </div>
     </ng-template>

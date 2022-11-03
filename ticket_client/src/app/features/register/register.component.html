@@ -13,8 +13,8 @@
           <div class="flex flex-col col-span-2">
             <input type="email" pInputText id="email" class="p-inputtext-sm" required autofocus
               [formControl]='registerForm.controls["email"]' />
-            <small class="p-error" *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].dirty">Email is required.</small>
-            <small class="p-error" *ngIf="registerForm.controls['email'].hasError('email') && registerForm.controls['email'].dirty">Email is required.</small>
+            <small class="p-error" *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].untouched == false">Email is required.</small>
+            <small class="p-error" *ngIf="registerForm.controls['email'].hasError('email') && registerForm.controls['email'].untouched == false">Email is required.</small>
           </div>
         </div>
         <div class="grid grid-cols-3 gap-4 mt-3">
@@ -22,7 +22,7 @@
           <div class="flex flex-col col-span-2">
             <input type="password" pPassword id="password" class="p-inputtext-sm" [feedback]="false" required 
               [formControl]='registerForm.controls["password"]' />
-            <small class="p-error" *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].dirty">Password is required.</small>
+            <small class="p-error" *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].untouched == false">Password is required.</small>
           </div>
         </div>
         <div class="grid grid-cols-3 gap-4 mt-3">
@@ -30,8 +30,8 @@
           <div class="flex flex-col col-span-2">
             <input type="password" pPassword id="confirmPassword" class="p-inputtext-sm" [feedback]="false" required
               [formControl]='registerForm.controls["confirmPassword"]' />
-            <small class="p-error" *ngIf="registerForm.controls['confirmPassword'].hasError('required') && registerForm.controls['confirmPassword'].dirty">Confirm Password is required.</small>
-            <small class="p-error" *ngIf="registerForm.controls['confirmPassword'].hasError('compare') && registerForm.controls['confirmPassword'].dirty">
+            <small class="p-error" *ngIf="registerForm.controls['confirmPassword'].hasError('required') && registerForm.controls['confirmPassword'].untouched == false">Confirm Password is required.</small>
+            <small class="p-error" *ngIf="registerForm.controls['confirmPassword'].hasError('compare') && registerForm.controls['confirmPassword'].untouched == false">
               Password not match!
             </small>	
           </div>
@@ -43,7 +43,7 @@
           </p-button>
         </div>
         <div class="">
-          <button type="submit" pButton styleClass="p-button-sm" [icon]="loading ? 'pi pi-spin pi-spinner' : 'pi pi-sign-in'" label="Register" [disabled]="!registerForm.dirty || loading"></button>
+          <button type="submit" pButton styleClass="p-button-sm" [icon]="loading ? 'pi pi-spin pi-spinner' : 'pi pi-sign-in'" label="Register" [disabled]="!registerForm.untouched == false || loading"></button>
         </div>
       </div>
     </div>

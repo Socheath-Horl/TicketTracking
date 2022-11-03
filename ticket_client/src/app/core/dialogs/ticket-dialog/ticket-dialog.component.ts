@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { Auth } from '../../models/auth.model';
 import { Role } from '../../models/role.model';
 import { TicketTypeEnum } from '../../models/ticket-type.enum';
 import { Ticket } from '../../models/ticket.model';
 import { User } from '../../models/user.model';
+import { AuthService } from '../../services/auth.service';
 import { ModalService } from '../../services/modal.service';
 import { TicketService } from '../../services/ticket.service';
 import { ToastService } from '../../services/toast.service';
@@ -20,6 +22,7 @@ export class TicketDialogComponent implements OnInit {
     private fb: FormBuilder,
     private modalService: ModalService,
     private toastService: ToastService,
+    private authService: AuthService,
   ) { }
 
   users: any[] = [];
@@ -32,18 +35,22 @@ export class TicketDialogComponent implements OnInit {
   displaySub: Subscription;
   ticketForm: FormGroup;
   loading: boolean = false;
+  auth: Auth;
+  ticket: Ticket;
 
   ngOnDestroy(): void {
     this.displaySub.unsubscribe();
   }
 
   ngOnInit(): void {
+    this.auth = this.authService.auth$.getValue();
     // for show or hide form dialog
     this.displaySub = this.modalService.display$.subscribe((display: boolean) => {
       this.display = display;
     });
 
     this.ticketService.editTicker$.subscribe((ticket: Ticket) => {
+      this.ticket = ticket;
       this.initForm(ticket);
     });
   }
@@ -61,23 +68,54 @@ export class TicketDialogComponent implements OnInit {
     });
   }
 
+  permitAction(action: string): boolean {
+    let ticket = '';
+    if (this.ticket.TicketType === TicketTypeEnum.Bug) {
+      ticket = 'bug';
+    } else if (this.ticket.TicketType === TicketTypeEnum.Test_Case) {
+      ticket = 'test_case';
+    } else if (this.ticket.TicketType === TicketTypeEnum.Feature_Request) {
+      ticket = 'feature_request';
+    }
+    let permit = this.authService.isPermitAction(`${ticket}_${action}`, this.auth.Role);
+    return permit;
+  }
+
   onSave()  {
+    this.ticketForm.markAllAsTouched();
+    if (this.ticketForm.invalid) {
+      return;
+    }
+    
     this.loading = true;
     let ticket = this.ticketForm.value;
-    let ticketType = ticket.resolved ? TicketTypeEnum.Resolved : ticket.ticketType;
     console.log(ticket);
+    let ticketType = ticket.resolved ? TicketTypeEnum.Resolved : ticket.ticketType;
+
     if (ticket.id) {
-      this.ticketService.updateTicket(ticket.id, ticket.description, ticket.summary, ticket.serverity, ticket.priority, ticketType).subscribe(res => {
-        this.toastService.addSingle("success", "Success", "Create Success");
-        this.ticketService.setRefreshTicket(true);
-        this.loading = false;
-        this.modalService.setDisplay(false);
-      }, err => {
-        this.toastService.addSingle("error", "", err.error.Message);
-        this.loading = false;
-      });
+      if (ticket.resolved) {
+        this.ticketService.resolvedTicket(ticket.id, ticket.ticketType).subscribe(res => {
+          this.toastService.addSingle("success", "Success", "Resolved");
+          this.ticketService.setRefreshTicket(true);
+          this.loading = false;
+          this.modalService.setDisplay(false);
+        }, err => {
+          this.toastService.addSingle("error", "", err.error.Message);
+          this.loading = false;
+        });
+      } else {
+        this.ticketService.updateTicket(ticket.id, ticket.description, ticket.summary, ticket.severity, ticket.priority, ticketType).subscribe(res => {
+          this.toastService.addSingle("success", "Success", "Create Success");
+          this.ticketService.setRefreshTicket(true);
+          this.loading = false;
+          this.modalService.setDisplay(false);
+        }, err => {
+          this.toastService.addSingle("error", "", err.error.Message);
+          this.loading = false;
+        });
+      }
     } else {
-      this.ticketService.createTicket(ticket.description, ticket.summary, ticket.serverity, ticket.priority, ticketType).subscribe(res => {
+      this.ticketService.createTicket(ticket.description, ticket.summary, ticket.severity, ticket.priority, ticketType).subscribe(res => {
         this.toastService.addSingle("success", "Success", "Update Success");
         this.ticketService.setRefreshTicket(true);
         this.loading = false;

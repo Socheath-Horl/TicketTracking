@@ -1,20 +1,21 @@
 <form id="ticketForm" [formGroup]="ticketForm" autocomplete="off" *ngIf="ticketForm">
-  <p-dialog header="Create New Ticket" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+  <p-dialog header="Ticket" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
     [resizable]="false">
     <ng-template pTemplate="content">
       <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
         <label for="summary" class="flex items-center normal-text">Summary:</label>
         <div class="col-span-2">
-          <input type="text" inputId="summary" class="p-inputtext-sm w-full" pInputText [formControl]='ticketForm.controls["summary"]' />
-          <small class="p-error" *ngIf="ticketForm.controls['summary'].hasError('required') && ticketForm.controls['summary'].dirty">Summary is required.</small>
+          <input type="text" inputId="summary" class="p-inputtext-sm w-full" pInputText [formControl]='ticketForm.controls["summary"]'
+            [readonly]="!permitAction('update')" />
+          <small class="p-error" *ngIf="ticketForm.controls['summary'].hasError('required') && ticketForm.controls['summary'].untouched == false">Summary is required.</small>
         </div>
       </div>
 
       <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
         <label for="description" class="flex items-center normal-text">Description:</label>
         <div class="col-span-2">
-          <textarea [rows]="5" pInputTextarea inputId="description" class="p-inputtext-sm w-full" [formControl]='ticketForm.controls["description"]'></textarea>
-          <small class="p-error" *ngIf="ticketForm.controls['description'].hasError('required') && ticketForm.controls['description'].dirty">Description is required.</small>
+          <textarea [readonly]="!permitAction('update')" [rows]="5" pInputTextarea inputId="description" class="p-inputtext-sm w-full" [formControl]='ticketForm.controls["description"]'></textarea>
+          <small class="p-error" *ngIf="ticketForm.controls['description'].hasError('required') && ticketForm.controls['description'].untouched == false">Description is required.</small>
         </div>
       </div>
 
@@ -23,35 +24,35 @@
         <div class="col-span-2">
           <p-dropdown inputId="ticketType" [options]="tickets" [formControl]='ticketForm.controls["ticketType"]' optionLabel="label" [filter]="true"
             filterBy="label" optionValue="value" [showClear]="true" placeholder="<<select>>" appendTo="body"
-            styleClass="w-full">
+            styleClass="w-full" [disabled]="ticketForm.value.Id !== ''">
           </p-dropdown>
-          <small class="p-error" *ngIf="ticketForm.controls['ticketType'].hasError('required') && ticketForm.controls['ticketType'].dirty">Ticket Type is required.</small>
+          <small class="p-error" *ngIf="ticketForm.controls['ticketType'].hasError('required') && ticketForm.controls['ticketType'].untouched == false">Ticket Type is required.</small>
         </div>
       </div>
 
       <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
         <label for="severity" class="flex items-center normal-text">Severity:</label>
         <div class="col-span-2">
-          <p-inputSwitch inputId="severity" [formControl]='ticketForm.controls["severity"]'></p-inputSwitch>
+          <p-inputSwitch inputId="severity" [formControl]='ticketForm.controls["severity"]' [disabled]="!permitAction('update')"></p-inputSwitch>
         </div>
       </div>
 
       <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
         <label for="priority" class="flex items-center normal-text">Priority:</label>
         <div class="col-span-2">
-          <p-inputSwitch inputId="priority" [formControl]='ticketForm.controls["priority"]'></p-inputSwitch>
+          <p-inputSwitch inputId="priority" [formControl]='ticketForm.controls["priority"]' [disabled]="!permitAction('update')"></p-inputSwitch>
         </div>
       </div>
 
-      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4">
+      <div class="grid grid-cols-3 grid-flow-col gap-4 pb-4" *ngIf="permitAction('resolved')">
         <label for="resolved" class="flex items-center normal-text">Resolved:</label>
         <div class="col-span-2">
-          <p-inputSwitch inputId="resolved" [formControl]='ticketForm.controls["resolved"]'></p-inputSwitch>
+          <p-inputSwitch inputId="resolved" [formControl]='ticketForm.controls["resolved"]' [disabled]="!permitAction('resolved')"></p-inputSwitch>
         </div>
       </div>
     </ng-template>
     <ng-template pTemplate="footer">
-      <button type="submit" pButton icon="pi pi-check" (click)="onSave()" label="Ok" styleClass="p-button-text"></button>
+      <button type="submit" *ngIf="permitAction('update') || permitAction('resolved')" pButton icon="pi pi-check" (click)="onSave()" label="Ok" styleClass="p-button-text"></button>
     </ng-template>
   </p-dialog>
 </form>

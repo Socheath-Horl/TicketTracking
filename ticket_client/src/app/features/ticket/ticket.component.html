@@ -26,7 +26,7 @@
                 </div>
                 <div>
                   <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
-                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
+                  <p-button icon="pi pi-trash" *ngIf="permitAction('bug_delete')" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id, ticket.TicketType)"></p-button>
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div>
                   <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
-                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
+                  <p-button *ngIf="permitAction('test_case_delete')" icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id, ticket.TicketType)"></p-button>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@
                 </div>
                 <div>
                   <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
-                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
+                  <p-button *ngIf="permitAction('feature_request_delete')" icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id, ticket.TicketType)"></p-button>
                 </div>
               </div>
             </div>
@@ -89,7 +89,6 @@
                 </div>
                 <div>
                   <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-text p-button-sm mr-1" (onClick)="onViewTicket(ticket)"></p-button>
-                  <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-danger p-button-text p-button-sm" (onClick)="onDeleteTicket(ticket.Id)"></p-button>
                 </div>
               </div>
             </div>

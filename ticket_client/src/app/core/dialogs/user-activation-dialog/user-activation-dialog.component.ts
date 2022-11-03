@@ -70,9 +70,12 @@ export class UserActivationDialogComponent implements OnInit, OnDestroy {
   }
 
   onActivate()  {
+    this.userRoleForm.markAllAsTouched();
+    if (this.userRoleForm.invalid) {
+      return;
+    }
     this.loading = true;
     let userRole = this.userRoleForm.value;
-    console.log(userRole);
     this.userService.activateUser(userRole.user, userRole.role).subscribe(res => {
       this.toastService.addSingle("success", "Success", "Activate Success");
       this.userService.setRefreshUser(true);

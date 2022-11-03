@@ -75,4 +75,45 @@ export class AuthService {
     console.log(decodeToken);
     return decodeToken;
   }
+
+  isPemitUrl(url: string, role: string) {
+    let permit: boolean = false;
+    if (role === 'Administrator') {
+      permit = true; 
+    } else {
+      if (url === '/main/user') {
+        permit = false;
+      } else {
+        permit = true;
+      }
+    }
+    return permit;
+  }
+
+  isPermitAction(action: string, role: string) {
+    let permit: boolean = false;
+    if (role === 'Administrator') {
+      permit = true;
+    } else if (role === 'QA') {
+      if (['bug_create', 'bug_update', 'bug_delete',
+        'test_case_create', 'test_case_update', 'test_case_delete', 'test_case_resolved'].indexOf(action) !== -1) {
+        permit = true;
+      } else {
+        permit = false;
+      }
+    } else if (role === 'RD') {
+      if (['bug_resolved', 'feature_request_resolved'].indexOf(action) !== -1) {
+        permit = true;
+      } else {
+        permit = false;
+      }
+    } else if (role == 'PM') {
+      if (['feature_request_create', 'feture_request__update', 'feature_request_delete'].indexOf(action) !== -1) {
+        permit = true;
+      } else {
+        permit = false;
+      }
+    }
+    return permit;
+  }
 }

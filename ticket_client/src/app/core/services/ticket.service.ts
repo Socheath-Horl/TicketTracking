@@ -40,13 +40,13 @@ export class TicketService {
     this.editTicker$.next(this.editTicker);
   }
 
-  createTicket(description: string, summary: string, serverity: boolean, priority: boolean, ticketType: TicketTypeEnum) {
+  createTicket(description: string, summary: string, severity: boolean, priority: boolean, ticketType: TicketTypeEnum) {
     let ticket = this.getTicketType(ticketType);
     if(ticket) {
       return this.http.post(`${environment.apiUrl}/${ticket}`, {
         Description: description,
         Summary: summary,
-        Severity: serverity,
+        Severity: severity,
         Priority: priority
       }).pipe(map((result) => {
         return result;
@@ -59,13 +59,13 @@ export class TicketService {
     }
   }
 
-  updateTicket(id: string, description: string, summary: string, serverity: boolean, priority: boolean, ticketType: TicketTypeEnum) {
+  updateTicket(id: string, description: string, summary: string, severity: boolean, priority: boolean, ticketType: TicketTypeEnum) {
     let ticket = this.getTicketType(ticketType);
     if(ticket) {
       return this.http.put(`${environment.apiUrl}/${ticket}/${id}`, {
         Description: description,
         Summary: summary,
-        Severity: serverity,
+        Severity: severity,
         Priority: priority
       }).pipe(map((result) => {
         return result;

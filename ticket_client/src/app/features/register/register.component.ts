@@ -43,6 +43,10 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister() {
+    this.registerForm.markAllAsTouched();
+    if (this.registerForm.invalid) {
+      return;
+    }
     this.loading = true;
     let user = this.registerForm.value;
     this.userService.register(user.email, user.password, user.confirmPassword).subscribe(res => {

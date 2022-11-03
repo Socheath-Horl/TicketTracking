@@ -40,6 +40,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    this.loginForm.markAllAsTouched();
+    if (this.loginForm.invalid) {
+      return;
+    }
+
     this.loading = true;
     let user = this.loginForm.value;
     this.authService.signin(user.email, user.password).subscribe(res => {

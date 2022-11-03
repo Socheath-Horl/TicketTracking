@@ -7,6 +7,11 @@ Below is the Task I done:
 * Task 2: develop app
   * Backend in **TicketTracking**
   * Frontend in **ticket_client**
+  * User For Testing:
+    * Email: **admin@ticket.com**, Password: **Passw0rd@123**, Role: **Administrator**
+    * Email: **qauser@ticket.com**, Password: **Passw0rd@123**, Role: **QA**
+    * Email: **rduser@ticket.com**, Password: **Passw0rd@123**, Role: **RD**
+    * Email: **pmuser@ticket.com**, Password: **Passw0rd@123**, Role: **PM**
 * Task 3: System architecture doucment in file **Task 3.pdf**
   * For mockup you can goto this link [Ticket Tracking](https://www.figma.com/proto/eF3Kh77C4neI2WDUUIASrR/Ticket-Tracking?node-id=2%3A2&scaling=scale-down&page-id=0%3A1)
 * Task 4: Write API Document in file **TicketTracking.postman_collection.json**. This collection content API endpoint and its document.
